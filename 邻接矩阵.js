@@ -1,0 +1,46 @@
+class Adjoin {
+    constructor(vertex){
+        this.vertex = vertex
+        this.quantity = vertex.length
+        this.init()
+    }
+    // 初始化一个数组 数组的长度是 this.quantity * this.quantity
+    init(){
+        this.adjoinArray = Array.from({length:this.quantity * this.quantity})
+    }
+
+    getVertexRow(id){
+        const index = this.vertex.indexOf(id)
+        const col = []
+        this.vertex.forEach((item,pIndex) => {
+            col.push(this.adjoinArray[index + this.quantity * pIndex])
+        });
+        return col
+    }
+
+    getAdjoinVertexs(id){
+        return this.getVertexRow(id).map((item,index) => (item ? this.vertex[index] : '')).filter(Boolean)
+    }
+
+    setAdjoinVertexs(id,sides){
+        const pIndex = this.vertex.indexOf(id)
+        sides.forEach((item)=>{
+            const index = this.vertex.indexOf(item)
+            this.adjoinArray[pIndex * this.quantity + index] = 1
+        })
+    }
+}
+
+
+const demo = new Adjoin(['v0','v2','v3','v4','v5'])
+demo.setAdjoinVertexs('v0',['v2','v3'])
+demo.setAdjoinVertexs('v1',['v3','v4'])
+demo.setAdjoinVertexs('v2',['v0','v3','v4'])
+demo.setAdjoinVertexs('v3',['v0','v1','v2'])
+demo.setAdjoinVertexs('v4',['v1','v2'])
+
+console.log(demo.getAdjoinVertexs('v0'))
+console.log(demo.getAdjoinVertexs('v1'))
+console.log(demo.getAdjoinVertexs('v2'))
+console.log(demo.getAdjoinVertexs('v3'))
+console.log(demo.getAdjoinVertexs('v4'))

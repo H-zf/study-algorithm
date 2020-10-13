@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #btn {
+            font-size: 16px;
+            line-height: 0;
+            background-color: red;
+        }
+        #btn1 {
+            font-size: 0;
+            line-height: 18px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:400px;height: 400px;background-color: red;position: relative;">
+        <div style="width: 200px;height: 200px;position: absolute;left: 0;right: 0;top: 0;bottom: 0;background-color: #ccc;margin: auto;"></div>
+    </div>
+    <script>
+        
+        // document.querySelector('#btn').ontouchstart = function () {
+        //     console.log('start')
+        // }
+        // document.querySelector('#btn').ontouchend = function () {
+        //     console.log('end')
+        // }
+        // document.querySelector('#btn').onclick = function () {
+        //     console.log('click')
+        // }
+        //    let correntArr = ["name",'age',"height"]
+        // let resArr = [
+        //     {ccc:"name"},
+        //     {ddd:"height"},
+        //     {fff:"sadsad"},
+        //     {eee:"dadwq"},
+        //     {bbb:"age"}
+        // ]
+        // let newArr = []
+        // function search(k,arr){
+        //     for (let i = 0;i < arr.length;i ++){
+        //         Object.values(arr[i]).forEach((item)=>{
+        //             if(k === item){
+        //                 newArr.push(arr[i])
+        //             }
+        //         })
+        //     }
+        // }
+        // correntArr.forEach((item)=>{
+        //     search(item,resArr)
+        // }) 
+
+        // console.log('1');//
+        // setTimeout(function () {
+        //     console.log('2');//
+        //     new Promise(function (resolve) {
+        //         console.log('3');//
+        //         resolve();
+        //     }).then(function () {
+        //         console.log('4');//
+        //     })
+        // }, 0);
+        // new Promise(function (resolve) {
+        //     console.log('5');//
+        //     resolve();
+        // }).then(function () {
+        //     console.log('6');//
+        // });
+        // setTimeout(function () {
+        //     console.log('7');//
+        //     new Promise(function (resolve) {
+        //         console.log('8');//
+        //         resolve();
+        //     }).then(function () {
+        //         console.log('9');//
+        //     });
+        // })
+        // let obj = {
+        //     ddd:{
+        //         fun:()=>{
+        //             console.log(this === window)
+        //             setTimeout(()=>{
+        //                 console.log(this)
+        //             })
+        //         }
+        //     }
+        // }
+
+        // obj.ddd.fun()
+
+        let obj8 = {
+            a:1,
+            b:2,
+            c:[
+                {d:1,e:2},
+                {f:1}
+            ]
+        }
+        let ccc = Object.assign({},obj8)
+        obj8.g = 4
+
+        console.log('ccc----',ccc)
+        console.log('obj8----',obj8)
+    </script>
+</body>
+</html>
